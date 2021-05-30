@@ -7,19 +7,30 @@ csvList=csvFile.read().split('\n')
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #splits by postal city and state
-def splitPostal():
+def splitPostal(csvFile):
     citiesPostal = []
     for i in csvFile:
         temp = i.split(',')
         if len(temp) > 3:
-            citiesPostal.append((temp[0], temp[1], temp[2]))
+            citiesPostal.append((temp[0], temp[1] + ' ' + temp[2]))
     return citiesPostal
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #creating requested city list
 def bigCity():
+    biggestCities = []
     citiesList=cityFile.read().split('\n')[1:]
     for line in citiesList:
-        print(line.split('\t')[1])
+        biggestCities.append(line.split('\t')[1])
+    return biggestCities
+
+#decompose a string into "<city name> <state name> using REGEX
+def decompose(s):
+    temp = re.search(r'[a-z][A-Z]', s)
+    return s[0:temp.span()[0]+1] + ' ' + s[temp.span()[0]+1:]
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-print(splitPostal())
-#bigCity()
+cities = bigCity()
+biggestCities = [decompose(x) for x in cities]
+allCities = splitPostal(csvList)
+PostalBigCities = [x[0] + ' ' + x[1] for x in allCities if x[1] in biggestCities]
+print(PostalBigCities)
