@@ -8,16 +8,18 @@ csvList=csvFile.read()
 biggestCities = cityFile.read()
 
 matchBiggestCities = re.findall(r"([A-Z].*[a-z])([A-Z].*?)\t", biggestCities)
-matchCsv = re.findall(r"(\d+),([A-Z].*?),(.*?),", csvList)
+matchCsv = re.findall(r"(.*?),(.*?),(.*?),", csvList)
 
-
+print(matchBiggestCities[0])
+counter=0
 for tupCities in matchBiggestCities:
     for tupCsv in matchCsv:
         if tupCsv[1] + tupCsv[2] == tupCities[0] + tupCities[1]:
+            counter+=1
             print(tupCsv[0] + ' ' + tupCsv[1] + ' ' + tupCsv[2])
             break
 
-
+print (counter)
 '''
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #splits by postal city and state
