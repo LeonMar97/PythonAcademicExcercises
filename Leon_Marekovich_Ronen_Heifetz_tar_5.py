@@ -7,8 +7,9 @@ csvList=csvFile.read()
 
 biggestCities = cityFile.read()
 
-matchBiggestCities = re.findall(r"([A-Z][a-z].*[a-z])([A-Z].*?)\t", biggestCities)
-matchCsv = re.findall(r"(\d+),([A-Z][a-z]+),(.*?),", csvList)
+matchBiggestCities = re.findall(r"([A-Z].*[a-z])([A-Z].*?)\t", biggestCities)
+matchCsv = re.findall(r"(\d+),([A-Z].*?),(.*?),", csvList)
+
 
 for tupCities in matchBiggestCities:
     for tupCsv in matchCsv:
