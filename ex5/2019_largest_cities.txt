@@ -1,5 +1,5 @@
 2019 rank	City	State[c]	2019 estimate	2010 census	Change	2016 land area	2016 population density	Location
-1	New YorkNew York	8,336,817	8,175,133	+1.98%	301.5 sq mi	780.9 km2	28,317/sq mi	10,933/km2	40.66°N 73.93°W
+1	New York CityNew York	8,336,817	8,175,133	+1.98%	301.5 sq mi	780.9 km2	28,317/sq mi	10,933/km2	40.66°N 73.93°W
 2	Los AngelesCalifornia	3,979,576	3,792,621	+4.93%	468.7 sq mi	1,213.9 km2	8,484/sq mi	3,276/km2	34.01°N 118.41°W
 3	ChicagoIllinois	2,693,976	2,695,598	−0.06%	227.3 sq mi	588.7 km2	11,900/sq mi	4,600/km2	41.83°N 87.68°W
 4	HoustonTexas	2,320,268	2,100,263	+10.48%	637.5 sq mi	1,651.1 km2	3,613/sq mi	1,395/km2	29.78°N 95.39°W
